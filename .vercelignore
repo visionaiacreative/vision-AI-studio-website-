@@ -1,0 +1,19 @@
+# source footage — the site serves the web encodes in video/grid-web
+video/videos grid/
+# design / tooling leftovers
+logo/
+.claude/
+.DS_Store
+# local secrets / CLI state — never upload
+.env*
+.gitignore
+# course source material + design mockups — the site serves assets/courses and video/courses
+/course-source/
+/mockups/
+# previous hero cuts — replaced by video/hero-*-v2.mp4 and assets/hero-poster*-v2.jpg
+/video/hero video.mp4
+/video/hero video mobile.mp4
+/assets/hero-poster.jpg
+/assets/hero-poster-mobile.jpg
+# source photos for the stills section: the site serves the web versions in assets/stills
+/photos/

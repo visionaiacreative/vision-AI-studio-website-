@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>דוגמה — מסך הקורסים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="mockup.css?v=6">
+</head>
+<body>
+
+<!-- DESIGN MOCKUP v2 — one overview screen. The two courses sit side by side;
+     clicking one opens it in place (tabs, no long scroll), the other folds into a rail. -->
+
+<header class="site-header on-hero" id="siteHeader" dir="ltr">
+  <div class="header-inner">
+    <a href="home-courses-section.html" class="brand" aria-label="Vision AI Studio">
+      <img class="logo-on-light" src="../assets/logo-dark.webp" alt="Vision AI Studio" width="1753" height="174">
+      <img class="logo-on-dark" src="../assets/logo-light.webp" alt="" aria-hidden="true" width="1753" height="174">
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="home-courses-section.html">WORK</a>
+      <a href="home-courses-section.html">DIGITAL</a>
+      <a href="home-courses-section.html">SERVICES</a>
+      <a href="courses-page.html" aria-current="page">COURSES</a>
+      <a href="home-courses-section.html">CONTACT</a>
+    </nav>
+    <a href="#" class="btn-talk" dir="rtl">צרו קשר ונתחיל ליצור <span class="arrow">←</span></a>
+  </div>
+</header>
+
+<main>
+
+  <!-- opener: full-bleed, like the home hero. Still / film / still wall behind the type. -->
+  <section class="cp-hero" id="cpHero">
+    <div class="cp-wall" aria-hidden="true">
+      <img src="media/p12.jpg" alt="" style="object-position:38% 30%">
+      <video id="heroFilm" src="media/soft.mp4" poster="media/soft-poster.jpg" autoplay muted loop playsinline></video>
+      <img src="media/p24.jpg" alt="" style="object-position:50% 30%">
+    </div>
+    <div class="cp-shade" aria-hidden="true"></div>
+
+    <div class="cp-hero-inner">
+      <p class="kicker reveal" dir="ltr">VISION AI — COURSES</p>
+      <h1 class="cp-headline reveal" dir="ltr">
+        <span>LEARN.</span>
+        <span class="outline">CREATE.</span>
+      </h1>
+
+      <div class="cp-band reveal">
+        <p class="cp-meta" dir="ltr">
+          <span>MADE WITH AI</span>
+          <button type="button" class="film-sound" id="filmSound" aria-pressed="false">SOUND OFF</button>
+        </p>
+        <div dir="rtl" style="text-align:right">
+          <p class="cp-lede">
+            לומדים ליצור ב־<span dir="ltr">AI</span> את מה שעד היום דרש צלם, הפקה ומתכנת.
+            <span class="l2">שני קורסים מעשיים, לייב בזום.</span>
+          </p>
+          <div class="hero-ctas">
+            <a href="#courses" class="btn-primary">לבחירת קורס <span class="arrow">↓</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- the two courses -->
+  <section class="section cx-wrap" id="courses">
+    <div class="work-head">
+      <p class="kicker reveal" dir="ltr">02 COURSES</p>
+      <div class="work-head-text reveal" dir="rtl">
+        <h2 class="work-title">בוחרים קורס</h2>
+      </div>
+    </div>
+
+    <div class="cc-grid cx reveal" id="cx"></div>
+  </section>
+
+  <!-- work made with the same tools -->
+  <div class="strip-head">
+    <p class="kicker" dir="ltr">MADE WITH AI</p>
+    <p>ככה נראה תוכן שנוצר בכלים שלומדים בקורס.</p>
+  </div>
+  <div class="strip" aria-hidden="true">
+    <div class="strip-track" id="stripTrack"></div>
+  </div>
+
+</main>
+
+<footer class="cp-foot">
+  <div class="footer-credits" dir="ltr">
+    <div class="footer-id">
+      <img class="footer-logo" src="../assets/logo-dark.webp" alt="Vision AI Studio" width="1753" height="174">
+    </div>
+    <nav class="footer-links" aria-label="Contact links">
+      <a href="#">Instagram</a><a href="#">TikTok</a><a href="#">WhatsApp</a><a href="#">Email</a><a href="#" dir="rtl">הצהרת נגישות</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="mock-bar">
+  <b>דוגמה עיצובית — לא חלק מהאתר</b>
+  <a href="home-courses-section.html">1. עמוד הבית: סרגל, הירו וסקשן</a>
+  <a href="courses-page.html" aria-current="page">2. המסך החדש: הקורסים</a>
+</div>
+
+<script>
+/* ---------------------------------------------------------------- content */
+var AI = '<span dir="ltr">AI</span>';
+var D = function (t) { return '<span class="draft">' + t + '</span>'; };
+
+var COURSES = [
+  {
+    id: 'business', num: '01', tag: 'BUSINESS OWNERS',
+    name: 'קורס ' + AI + ' לבעלי עסקים',
+    card: 'ארבעה כלים שמחליפים בעסק צלם, חברת הפקה, מתכנת ומענה ידני.',
+    desc: 'קורס מעשי שבו תלמדו להפיק בעצמכם תוכן ויזואלי, סרטוני פרסומת, אתרים ודפי נחיתה וסוכן ' + AI + ' לעסק — מהבית, בלי ימי צילום ובלי הפקות.',
+    price: '1,890', img: 'media/p16.jpg', pos: '50% 22%', pay: '#pay-business',
+    gainLabel: 'לעסק שלכם:',
+    prog: [
+      ['תוכן ויזואלי למותג', 'עבודה נכונה עם ' + AI + ' ופרומפטים מדויקים. צילומי מוצר, תמונות תדמית ופוסטים — במראה אחיד שמתאים למותג שלכם.', 'ספריית תמונות מקצועית, בלי יום צילום.'],
+      ['סרטוני פרסומת', 'מרעיון ותסריט, דרך שוטים ותנועות מצלמה, ועד קריינות, כתוביות ומוזיקה. סרטון שמוכן לעלות לרשתות או לקמפיין ממומן.', 'פרסומות בקצב של הרשתות, בלי חברת הפקה.'],
+      ['אתרים ודפי נחיתה', 'אתר לעסק או דף ייעודי לכל צורך — מבצע, שירות חדש, אירוע או איסוף לידים. בלי לכתוב שורת קוד.', 'עמוד חדש בכל פעם שצריך, בלי תלות במתכנת.'],
+      ['סוכני ' + AI + ' ואוטומציות', 'סוכן שעונה לפניות, מסנן לידים ומתאם שיחות, ואוטומציות שחוסכות את העבודה הידנית שחוזרת כל יום.', 'מענה מיידי ללקוחות ושעות עבודה שמתפנות.']
+    ],
+    getsTitle: 'מה יהיה לכם ביד בסוף הקורס',
+    gets: [
+      ['ספריית תמונות למותג', 'צילומי מוצר ותדמית לאתר, לרשתות ולקטלוג — בלי להזמין צלם.'],
+      ['סרטון פרסומת מוכן', 'מוכן לאינסטגרם, לטיקטוק או לקמפיין ממומן — ותהליך שחוזרים עליו לכל מבצע.'],
+      ['אתר או דף נחיתה משלכם', 'עמוד ייעודי לכל צורך בעסק, שאתם בונים ומעדכנים לבד.'],
+      ['סוכן ' + AI + ' לשירות לקוחות', 'עונה לשאלות נפוצות, מסנן לידים ומתאם פגישות — גם מחוץ לשעות העבודה.']
+    ],
+    plus: ['שאלות ויחס אישי', 'ליווי אחרי הקורס', 'קהילת בעלי עסקים שעובדים עם ' + AI],
+    facts: [['מועד', 'נובמבר 2026'], ['מבנה', '4 מפגשים · 90 דקות'], ['פורמט', 'לייב בזום + הקלטות'], ['מתאים ל', 'בעלי עסקים, בלי רקע טכני ' + D('לאישור')]]
+  },
+  {
+    id: 'soldiers', num: '02', tag: 'SOLDIERS & VETERANS',
+    name: 'קורס ' + AI + ' לחיילים ומשוחררים',
+    card: 'יוצאים לאזרחות עם מקצוע של העולם החדש — ותיק עבודות ביד. ' + D('ניסוח שלי'),
+    desc: 'העולם שאתם יוצאים אליו כבר עובד עם ' + AI + '. בקורס לומדים את הכלים האלה מהיסוד — ליצור תוכן, לבנות אתר ולהקים סוכן ' + AI + ' — כדי להתחיל את האזרחות עם יכולת ממשית, לעצמכם או כשירות ללקוחות. ' + D('ניסוח שלי'),
+    price: '690', img: 'media/p27.jpg', pos: '50% 46%', pay: '#pay-soldiers',
+    gainLabel: 'בשבילכם:',
+    prog: [
+      ['תוכן ויזואלי', 'עבודה נכונה עם ' + AI + ' ופרומפטים מדויקים: תמונות, פוסטים ושפה ויזואלית אחידה, ברמה של סטודיו.', 'תיק עבודות ראשון, בלי ציוד ובלי תקציב.'],
+      ['סרטוני פרסומת', 'מרעיון ותסריט, דרך שוטים ותנועות מצלמה, ועד קריינות, כתוביות ומוזיקה.', 'יכולת שאפשר להציע לעסקים כבר מהיום הראשון.'],
+      ['אתרים ודפי נחיתה', 'אפיון, עיצוב, התאמה למובייל והעלאה לאוויר — בלי לכתוב שורת קוד.', 'אתר אישי, אתר למיזם שלכם, או ללקוח ראשון.'],
+      ['סוכני ' + AI + ' ואוטומציות', 'איך בונים סוכן שעונה, מסנן ומתאם, ואיך הופכים עבודה ידנית לאוטומציה.', 'להבין מבפנים את הכלים שמשנים את שוק העבודה.']
+    ],
+    getsTitle: 'עם מה יוצאים מהקורס',
+    gets: [
+      ['תיק עבודות ויזואלי', 'תמונות וקמפיינים שיצרתם, שאפשר להראות למעסיק או ללקוח.'],
+      ['סרטון פרסומת מוכן', 'סרטון שלם שעשיתם מהרעיון ועד התוצאה.'],
+      ['אתר אישי או דף נחיתה', 'באוויר, עם שם משלכם, שאתם יודעים לעדכן לבד.'],
+      ['סוכן ' + AI + ' ראשון', 'סוכן עובד שבניתם, והבנה איך בונים את הבא.']
+    ],
+    plus: ['שאלות ויחס אישי', 'ליווי אחרי הקורס', 'קהילה ' + D('לאישור')],
+    facts: [['זכאות', 'חיילים, ומשוחררים עד שנה לאחר השחרור'], ['מועד', D('יעודכן')], ['מבנה', '4 מפגשים · 90 דקות ' + D('לאישור')], ['פורמט', 'לייב בזום + הקלטות ' + D('לאישור')]]
+  }
+];
+
+var STRIP = ['p13', 'p03', 'p28', 'p18', 'p24', 'p17', 'p12', 'p09', 'p19', 'p16'];
+
+/* ---------------------------------------------------------------- build */
+function price(p) { return '<span class="price"><span class="outline">' + p + '</span><span class="price-cur">₪</span></span>'; }
+
+function courseHTML(c) {
+  var rows = c.prog.map(function (r, i) {
+    return '<li><span class="pg-num" dir="ltr">0' + (i + 1) + '</span>' +
+      '<div><h4>' + r[0] + '</h4><p>' + r[1] + '</p><p class="pg-gain">' + c.gainLabel + ' ' + r[2] + '</p></div></li>';
+  }).join('');
+
+  var gets = c.gets.map(function (g, i) {
+    return '<li><span class="pg-num" dir="ltr">0' + (i + 1) + '</span><div><h4>' + g[0] + '</h4><p>' + g[1] + '</p></div></li>';
+  }).join('');
+
+  var facts = c.facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join('');
+
+  return '' +
+  '<article class="cx-item" id="' + c.id + '" data-course="' + c.id + '">' +
+
+    '<button type="button" class="cc" data-open="' + c.id + '" aria-expanded="false" aria-controls="panel-' + c.id + '">' +
+      '<span class="cc-top"><span class="cc-num" dir="ltr">' + c.num + '</span><span class="cc-tag" dir="ltr">' + c.tag + '</span></span>' +
+      '<span class="cc-name">' + c.name + '</span>' +
+      '<span class="cc-desc">' + c.card + '</span>' +
+      '<span class="cc-bottom">' + price(c.price) + '<span class="cc-go">לפתיחת הקורס <i class="plus">+</i></span></span>' +
+    '</button>' +
+
+    '<button type="button" class="cx-rail" data-open="' + c.id + '" aria-label="מעבר לקורס השני">' +
+      '<span class="rail-top"><span class="rail-num" dir="ltr">' + c.num + '</span><span class="rail-plus">+</span></span>' +
+      '<span><span class="rail-name">' + c.name + '</span><span class="rail-price">₪ ' + c.price + '</span></span>' +
+    '</button>' +
+
+    '<div class="cx-panel" id="panel-' + c.id + '">' +
+      '<header class="pn-head">' +
+        '<div><p class="kicker" dir="ltr">' + c.num + ' / ' + c.tag + '</p><h3 class="pn-name">' + c.name + '</h3><p class="pn-desc">' + c.desc + '</p></div>' +
+        '<button type="button" class="pn-close" data-close>סגירה ✕</button>' +
+      '</header>' +
+
+      '<div class="pn-tabs" role="tablist">' +
+        '<button type="button" class="pn-tab" role="tab" aria-selected="true" data-tab="prog"><small dir="ltr">01</small>תוכנית הקורס</button>' +
+        '<button type="button" class="pn-tab" role="tab" aria-selected="false" data-tab="gets"><small dir="ltr">02</small>מה יוצא לכם מזה</button>' +
+        '<button type="button" class="pn-tab" role="tab" aria-selected="false" data-tab="join"><small dir="ltr">03</small>פרטים והרשמה</button>' +
+      '</div>' +
+
+      '<div class="pn-pane" role="tabpanel" data-pane="prog">' +
+        '<ol class="gets prog">' + rows + '</ol>' +
+      '</div>' +
+
+      '<div class="pn-pane" role="tabpanel" data-pane="gets" hidden>' +
+        '<ul class="gets">' + gets + '</ul>' +
+        '<p class="plus-line"><b>ובנוסף:</b>' + c.plus.map(function (p) { return '<span>' + p + '</span>'; }).join('') + '</p>' +
+      '</div>' +
+
+      '<div class="pn-pane" role="tabpanel" data-pane="join" hidden>' +
+        '<div class="join">' + price(c.price) +
+          '<div class="join-side"><dl class="facts">' + facts + '</dl>' +
+            '<div class="join-cta"><a href="' + c.pay + '" class="btn-primary">לתשלום והרשמה <span class="arrow">←</span></a><span class="join-note">קישור תשלום נפרד לקורס הזה ' + D('יתווסף') + '</span></div>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+var cx = document.getElementById('cx');
+cx.innerHTML = COURSES.map(courseHTML).join('');
+document.getElementById('stripTrack').innerHTML = STRIP.concat(STRIP).map(function (p) { return '<img src="media/' + p + '.jpg" alt="" loading="lazy">'; }).join('');
+
+/* ---------------------------------------------------------------- open / close */
+function openCourse(id, scroll) {
+  var items = cx.querySelectorAll('.cx-item'), found = false;
+  items.forEach(function (it) {
+    var on = it.dataset.course === id;
+    if (on) found = true;
+    it.classList.toggle('is-open', on);
+    it.querySelector('.cc').setAttribute('aria-expanded', on);
+    if (!on) it.querySelectorAll('video').forEach(function (v) { v.pause(); });
+  });
+  cx.classList.toggle('has-open', found);
+  if (found) cx.dataset.open = id; else delete cx.dataset.open;
+  history.replaceState(null, '', found ? '#' + id : location.pathname);
+  if (found && scroll !== false) window.scrollTo({ top: cx.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
+}
+
+cx.addEventListener('click', function (e) {
+  var opener = e.target.closest('[data-open]');
+  if (opener && cx.contains(opener) && opener !== cx) { openCourse(opener.dataset.open); return; }
+  if (e.target.closest('[data-close]')) { openCourse(null); return; }
+
+  var tab = e.target.closest('.pn-tab');
+  if (tab) {
+    var panel = tab.closest('.cx-panel');
+    panel.querySelectorAll('.pn-tab').forEach(function (t) { t.setAttribute('aria-selected', t === tab); });
+    panel.querySelectorAll('.pn-pane').forEach(function (p) { p.hidden = p.dataset.pane !== tab.dataset.tab; });
+    return;
+  }
+
+});
+
+if (location.hash === '#business' || location.hash === '#soldiers') { openCourse(location.hash.slice(1), false); window.addEventListener('load', function () { window.scrollTo(0, cx.getBoundingClientRect().top + window.scrollY - 84); }); }
+
+/* ---------------------------------------------------------------- film sound, header, reveal */
+var film = document.getElementById('heroFilm'), snd = document.getElementById('filmSound');
+snd.addEventListener('click', function () {
+  film.muted = !film.muted;
+  snd.textContent = film.muted ? 'SOUND OFF' : 'SOUND ON';
+  snd.setAttribute('aria-pressed', !film.muted);
+});
+
+var header = document.getElementById('siteHeader');
+function onScroll() {
+  header.classList.toggle('is-scrolled', window.scrollY > 12);
+  header.classList.toggle('on-hero', window.scrollY < document.getElementById('cpHero').offsetHeight - 80);
+}
+onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, { threshold: .08 });
+document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+</script>
+</body>
+</html>

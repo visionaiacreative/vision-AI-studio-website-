@@ -1,0 +1,10 @@
+.vercel
+.env*
+.DS_Store
+.claude/settings.local.json
+
+# Raw source material — already processed into assets/ and video/grid-web, not referenced
+# from the site. Kept out of history to avoid bloating the repo.
+course-source/
+photos/
+video/videos grid/
