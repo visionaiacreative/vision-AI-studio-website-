@@ -1,4 +1,4 @@
-// Courses screen (courses.html). main.js runs first: header, mobile menu, reveal, a11y menu, motionOff().
+// Courses screen (courses.html). main.js runs first: header, mobile menu, reveal, a11y menu, motionOff(), T (strings per language).
 
 // Tracks — the payment links aren't set yet; don't jump to the top of the page meanwhile.
 document.querySelectorAll('[data-pay]').forEach(a => a.addEventListener('click', e => {
@@ -19,7 +19,7 @@ const syncFilm = () => {
   else film.pause();
   const paused = !canPlay();
   pauseBtn.setAttribute('aria-pressed', String(paused));
-  pauseBtn.querySelector('.hero-pause-label').textContent = paused ? 'הפעלת וידאו' : 'עצירת וידאו';
+  pauseBtn.querySelector('.hero-pause-label').textContent = paused ? T.playVideo : T.pauseVideo;
   pauseBtn.classList.toggle('is-paused', paused);
 };
 pauseBtn.addEventListener('click', () => { userPaused = !userPaused; syncFilm(); });
@@ -33,5 +33,5 @@ soundBtn.addEventListener('click', () => {
   film.muted = !film.muted;
   soundBtn.textContent = film.muted ? 'SOUND OFF' : 'SOUND ON';
   soundBtn.setAttribute('aria-pressed', String(!film.muted));
-  soundBtn.setAttribute('aria-label', film.muted ? 'הפעלת קול בסרטון' : 'השתקת הסרטון');
+  soundBtn.setAttribute('aria-label', film.muted ? T.soundOn : T.soundOff);
 });

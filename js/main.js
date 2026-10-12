@@ -1,3 +1,37 @@
+// Language — Hebrew pages live at the root, their English twins under /en (<html lang="en">).
+// Every string the scripts put on screen comes from T, so both versions share this file.
+const EN = document.documentElement.lang === 'en';
+const T = EN ? {
+  pauseVideo: 'Pause video',
+  playVideo: 'Play video',
+  soundOn: 'Turn the film sound on',
+  soundOff: 'Mute the film',
+  nameMissing: 'Please enter your name.',
+  emailInvalid: 'The email address is not valid.',
+  contactMissing: 'Please leave an email or a phone number so we can get back to you.',
+  sending: 'Sending…',
+  sent: 'Thank you for reaching out. We will be in touch shortly.',
+  sendFailed: 'Something went wrong while sending. You can write to us directly at ',
+  newWindow: ' (opens in a new window)'
+} : {
+  pauseVideo: 'עצירת וידאו',
+  playVideo: 'הפעלת וידאו',
+  soundOn: 'הפעלת קול בסרטון',
+  soundOff: 'השתקת הסרטון',
+  nameMissing: 'נא למלא שם.',
+  emailInvalid: 'כתובת האימייל לא תקינה.',
+  contactMissing: 'נא להשאיר אימייל או טלפון כדי שנוכל לחזור אליכם.',
+  sending: 'שולחים…',
+  sent: 'תודה רבה על הפנייה, ניצור איתכם קשר בהקדם.',
+  sendFailed: 'משהו השתבש בשליחה. אפשר לכתוב לנו ישירות ל־',
+  newWindow: ' (נפתח בחלון חדש)'
+};
+
+// Language switch: land on the same section of the other version
+document.querySelectorAll('.lang-switch').forEach(a => a.addEventListener('click', () => {
+  if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash;
+}));
+
 // Header background on scroll
 const header = document.getElementById('siteHeader');
 const onScroll = () => {
@@ -52,7 +86,7 @@ if (heroVideos.length === 2) {
   // re-run source selection when the orientation flips, and match the poster
   const portrait = window.matchMedia('(orientation: portrait)');
   const setPoster = () => {
-    heroVideos[0].poster = portrait.matches ? 'assets/hero-poster-mobile-v2.jpg' : 'assets/hero-poster-v2.jpg';
+    heroVideos[0].poster = portrait.matches ? '/assets/hero-poster-mobile-v2.jpg' : '/assets/hero-poster-v2.jpg';
   };
   setPoster();
   portrait.addEventListener('change', () => {
@@ -87,7 +121,7 @@ if (heroVideos.length === 2) {
     if (!pauseBtn) return;
     const paused = !canPlay();
     pauseBtn.setAttribute('aria-pressed', String(paused));
-    pauseBtn.querySelector('.hero-pause-label').textContent = paused ? 'הפעלת וידאו' : 'עצירת וידאו';
+    pauseBtn.querySelector('.hero-pause-label').textContent = paused ? T.playVideo : T.pauseVideo;
     pauseBtn.classList.toggle('is-paused', paused);
   };
   const applyMotionPref = () => {
@@ -337,14 +371,14 @@ contactForm?.addEventListener('submit', async (e) => {
   // name is required and the email must be valid if given; email itself is optional,
   // but a lead needs some way back — so at least an email or a phone
   if (!contactForm.checkValidity()) {
-    formStatus.textContent = contactForm.name.validity.valueMissing ? 'נא למלא שם.' : 'כתובת האימייל לא תקינה.';
+    formStatus.textContent = contactForm.name.validity.valueMissing ? T.nameMissing : T.emailInvalid;
     formStatus.classList.add('is-error');
     contactForm.querySelector(':invalid')?.focus();
     return;
   }
   const data = Object.fromEntries(new FormData(contactForm));
   if (!data.email.trim() && !data.phone.trim()) {
-    formStatus.textContent = 'נא להשאיר אימייל או טלפון כדי שנוכל לחזור אליכם.';
+    formStatus.textContent = T.contactMissing;
     formStatus.classList.add('is-error');
     contactForm.email.focus();
     return;
@@ -352,7 +386,7 @@ contactForm?.addEventListener('submit', async (e) => {
   if (data._honey) return; // bot
   const original = btn.innerHTML;
   btn.disabled = true;
-  btn.textContent = 'שולחים…';
+  btn.textContent = T.sending;
 
   try {
     const res = await fetch(`https://formsubmit.co/ajax/${LEADS_INBOX}`, {
@@ -364,8 +398,9 @@ contactForm?.addEventListener('submit', async (e) => {
         'אימייל': data.email || '—',
         'טלפון': data.phone || '—',
         'מה רוצים ליצור': data.message || '—',
+        'שפת האתר': EN ? 'אנגלית — לחזור ללקוח באנגלית' : 'עברית',
         ...(data.email ? { _replyto: data.email } : {}),
-        _subject: `ליד חדש מהאתר — ${data.name}${data.company ? ' / ' + data.company : ''}`,
+        _subject: `ליד חדש מהאתר${EN ? ' (אנגלית)' : ''} — ${data.name}${data.company ? ' / ' + data.company : ''}`,
         _template: 'table',
         _captcha: 'false'
       })
@@ -373,11 +408,11 @@ contactForm?.addEventListener('submit', async (e) => {
     const json = await res.json().catch(() => ({}));
     if (!res.ok || String(json.success) !== 'true') throw new Error(json.message || res.status);
     contactForm.reset();
-    formStatus.textContent = 'תודה רבה על הפנייה, ניצור איתכם קשר בהקדם.';
+    formStatus.textContent = T.sent;
     formStatus.classList.add('is-success');
   } catch (err) {
     formStatus.classList.add('is-error');
-    formStatus.innerHTML = `משהו השתבש בשליחה. אפשר לכתוב לנו ישירות ל־<a href="mailto:${LEADS_INBOX}" dir="ltr">${LEADS_INBOX}</a>`;
+    formStatus.innerHTML = `${T.sendFailed}<a href="mailto:${LEADS_INBOX}" dir="ltr">${LEADS_INBOX}</a>`;
   } finally {
     btn.disabled = false;
     btn.innerHTML = original;
@@ -452,9 +487,9 @@ document.querySelectorAll('[dir="ltr"]').forEach(el => {
   if (!el.hasAttribute('lang') && /[A-Za-z]/.test(el.textContent) && !/[֐-׿]/.test(el.textContent)) el.lang = 'en';
 });
 document.querySelectorAll('a[target="_blank"]').forEach(a => {
-  if (a.hasAttribute('aria-label')) { a.setAttribute('aria-label', `${a.getAttribute('aria-label')} (נפתח בחלון חדש)`); return; }
+  if (a.hasAttribute('aria-label')) { a.setAttribute('aria-label', `${a.getAttribute('aria-label')}${T.newWindow}`); return; }
   const note = document.createElement('span');
   note.className = 'sr-only';
-  note.textContent = ' (נפתח בחלון חדש)';
+  note.textContent = T.newWindow;
   a.appendChild(note);
 });

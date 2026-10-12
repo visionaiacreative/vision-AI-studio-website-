@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vision AI Studio — Creative Studio / AI Production</title>
+<meta name="description" content="Vision AI Studio. AI is the tool. Creativity is the product. A creative studio that produces campaigns, content and websites for businesses — from the idea to the final result.">
+<link rel="canonical" href="https://visionai-studio.com/en">
+<!-- language versions: Hebrew at the root, English under /en (each page links to its twin) -->
+<link rel="alternate" hreflang="he" href="https://visionai-studio.com/">
+<link rel="alternate" hreflang="en" href="https://visionai-studio.com/en">
+<link rel="alternate" hreflang="x-default" href="https://visionai-studio.com/">
+<!-- link preview (WhatsApp, Facebook, etc.) — without these, each network picks an image off the page by itself -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="he_IL">
+<meta property="og:url" content="https://visionai-studio.com/en">
+<meta property="og:title" content="Vision AI Studio — Creative Studio / AI Production">
+<meta property="og:description" content="A creative studio that produces campaigns, content and websites for businesses — from the idea to the final result.">
+<meta property="og:image" content="https://visionai-studio.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=98">
+<script>
+  /* accessibility menu: re-apply the visitor's saved choices before first paint */
+  try {
+    var a11y = JSON.parse(localStorage.getItem('vision-a11y') || '{}'), h = document.documentElement;
+    if (a11y.text) h.classList.add('a11y-text-' + a11y.text);
+    ['contrast', 'links', 'font', 'still'].forEach(function (k) { if (a11y[k]) h.classList.add('a11y-' + k); });
+  } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#top">Skip to main content</a>
+
+<header class="site-header on-hero" id="siteHeader" dir="ltr">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Vision AI Studio">
+      <img class="logo-on-light" src="/assets/logo-dark.webp" alt="Vision AI Studio" width="1753" height="174">
+      <img class="logo-on-dark" src="/assets/logo-light.webp" alt="" aria-hidden="true" width="1753" height="174">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#work">WORK</a>
+      <a href="#digital">DIGITAL</a>
+      <a href="#services">SERVICES</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <a href="/" class="lang-switch" lang="he" hreflang="he" aria-label="גרסה בעברית">עב</a>
+
+    <a href="#contact" class="btn-talk">Let's start creating <span class="arrow">→</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#work">WORK</a>
+    <a href="#digital">DIGITAL</a>
+    <a href="#services">SERVICES</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</header>
+
+<main id="top" tabindex="-1">
+
+  <!-- ===================================================== HERO — full-bleed looping campaign video, typography on top ===================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video is-active" poster="/assets/hero-poster-v2.jpg" autoplay muted loop playsinline preload="auto">
+        <source src="/video/hero-tall-v2.mp4" type="video/mp4" media="(orientation: portrait)">
+        <source src="/video/hero-wide-v2.mp4" type="video/mp4">
+      </video>
+      <video class="hero-video" muted playsinline preload="auto">
+        <source src="/video/hero-tall-v2.mp4" type="video/mp4" media="(orientation: portrait)">
+        <source src="/video/hero-wide-v2.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+    </div>
+
+    <button type="button" class="hero-pause" aria-pressed="false">
+      <span class="hero-pause-icon" aria-hidden="true"><i></i><i></i></span>
+      <span class="hero-pause-label sr-only">Pause video</span>
+    </button>
+
+    <div class="hero-inner">
+      <p class="kicker reveal" dir="ltr">VISION AI — CREATIVE STUDIO</p>
+
+      <h1 class="hero-headline reveal" dir="ltr">
+        <span>IDEAS.</span>
+        <span class="outline">MADE VISIBLE.</span>
+      </h1>
+
+      <div class="hero-bottom reveal">
+        <div class="hero-text">
+          <p class="hero-lede">Campaigns, content and digital experiences created with AI — for brands that want to look different.</p>
+          <div class="hero-ctas">
+            <a href="#work" class="btn-primary">View our work <span class="arrow">→</span></a>
+            <a href="#contact" class="btn-soft">Get in touch <span class="arrow">→</span></a>
+          </div>
+        </div>
+
+        <p class="hero-services" dir="ltr">
+          <span>CAMPAIGNS</span><i>/</i><span>AI PRODUCTION</span><i>/</i><span>SOCIAL</span><i>/</i><span>DIGITAL</span>
+        </p>
+      </div>
+    </div>
+
+    <span class="spine" aria-hidden="true" dir="ltr">VISION AI STUDIO — CREATIVE PRODUCTION — 2026</span>
+  </section>
+
+  <!-- ===================================================== SELECTED WORK — 3×3 campaign wall, poster → video on hover / focus / tap ===================================================== -->
+  <!-- each tile: poster <img> + <video data-src> (loaded on first activation); data-start = the poster's timestamp, so the video picks up from that exact frame -->
+  <section class="section work" id="work">
+    <div class="work-head">
+      <p class="kicker reveal" dir="ltr">01 / SELECTED WORK</p>
+      <div class="work-head-text reveal">
+        <h2 class="work-title">Our Work</h2>
+        <p class="work-sub work-sub-line">Campaigns, content and digital worlds we've created for brands and businesses.</p>
+      </div>
+    </div>
+
+    <p class="work-hint reveal">Hover over a project to play its video</p>
+
+    <div class="work-grid reveal">
+      <a href="#" class="work-tile" data-tone="a" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/golden-hour.jpg" alt="Model in a field at sunset holding a perfume bottle" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/golden-hour.mp4" data-start="5.00" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">GOLDEN HOUR</span><span class="work-label-cat">FRAGRANCE CAMPAIGN</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="b" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/summit.jpg" alt="Skier descending a snowy slope" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/summit.mp4" data-start="5.02" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">SKI</span><span class="work-label-cat">WINTER SPORT FILM</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="e" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/noir.jpg" alt="Portrait of a man in dark lighting for a fragrance campaign" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/noir.mp4" data-start="23.06" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">LUMIÈRE</span><span class="work-label-cat">MEN'S FRAGRANCE CAMPAIGN</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="b" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/billboard.jpg" alt="Digital billboard on a tower in Tel Aviv" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/billboard.mp4" data-start="5.02" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">BILLBOARD</span><span class="work-label-cat">OUT-OF-HOME CAMPAIGN</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="c" dir="ltr" style="--focus: 50% 0%">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/runway.jpg" alt="Model in a black dress on a runway" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/runway.mp4" data-start="0.60" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">RUNWAY</span><span class="work-label-cat">FASHION FILM</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="d" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/swell.jpg" alt="Surfer riding a wave at sunset" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/swell.mp4" data-start="0.60" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">SURF</span><span class="work-label-cat">SPORT FILM</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="a" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/daily.jpg" alt="Model holding a dietary supplement package" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/daily.mp4" data-start="8.48" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">VITAGLOW</span><span class="work-label-cat">SUPPLEMENTS CAMPAIGN</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="c" dir="ltr" style="--focus: 50% 25%">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/motion.jpg" alt="Model in sportswear in a white studio" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/motion.mp4" data-start="0.96" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">ACTIVEWEAR</span><span class="work-label-cat">SPORTSWEAR CAMPAIGN</span></span>
+      </a>
+      <a href="#" class="work-tile" data-tone="d" dir="ltr">
+        <span class="work-media">
+          <img class="work-poster" src="/assets/work/studio.jpg" alt="Studio shoot — a model seated beside studio lighting" loading="lazy" decoding="async">
+          <video class="work-video" data-src="/video/grid-web/studio.mp4" data-start="5.00" muted loop playsinline preload="none" aria-hidden="true"></video>
+        </span>
+        <span class="work-label"><span class="work-label-name">STUDIO SHOOT</span><span class="work-label-cat">FASHION CAMPAIGN</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================================================== STILLS — campaign photography on one stage: the list picks a campaign (hover / focus / tap), its three frames take the stage ===================================================== -->
+  <section class="section stills" id="stills">
+    <div class="work-head">
+      <p class="kicker reveal" dir="ltr">02 / STILLS</p>
+      <div class="work-head-text reveal">
+        <h2 class="work-title">AI Models</h2>
+      </div>
+    </div>
+
+    <div class="stills-wrap reveal" dir="ltr">
+      <div class="stills-stage">
+        <ul class="stills-panel is-active" id="stills-dark" role="tabpanel" aria-labelledby="stills-tab-dark">
+          <li><img src="/assets/stills/dark-3.jpg" alt="Model in white, seated, flash photography at night" width="928" height="1232" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/dark-1.jpg" alt="Male model in a white tank top, seated, flash photography at night" width="928" height="1232" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/dark-2.jpg?v=5" alt="Model in a white set, seated, flash photography against a black background" width="960" height="1200" loading="lazy" decoding="async" style="object-position: 40% 30%"></li>
+        </ul>
+        <ul class="stills-panel" id="stills-shades" role="tabpanel" aria-labelledby="stills-tab-shades">
+          <li><img src="/assets/stills/shades-1.jpg" alt="Two models in sunglasses and black suits" width="960" height="1200" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/shades-3.jpg?v=2" alt="Low-angle close-up of a model in sunglasses, with a male model in a suit in the background" width="960" height="1200" loading="lazy" decoding="async" style="object-position: 62% 30%"></li>
+          <li><img src="/assets/stills/shades-2.jpg" alt="Three models in sunglasses and black against a white wall" width="960" height="1200" loading="lazy" decoding="async"></li>
+        </ul>
+        <ul class="stills-panel" id="stills-skin" role="tabpanel" aria-labelledby="stills-tab-skin">
+          <li><img src="/assets/stills/skin-3.jpg?v=2" alt="Model in a pink long-sleeve activewear set, looking over her shoulder" width="1024" height="1024" loading="lazy" decoding="async" style="object-position: 38% 30%"></li>
+          <li><img src="/assets/stills/skin-1.jpg?v=2" alt="Close-up of a cream activewear set on two models" width="960" height="1200" loading="lazy" decoding="async" style="object-position: 50% 50%"></li>
+          <li><img src="/assets/stills/skin-4.jpg" alt="Model in a gray activewear set facing the camera" width="1024" height="1024" loading="lazy" decoding="async"></li>
+        </ul>
+        <ul class="stills-panel" id="stills-outdoors" role="tabpanel" aria-labelledby="stills-tab-outdoors">
+          <li><img src="/assets/stills/outdoors-1.jpg" alt="Model in a brown top among green leaves" width="1024" height="1024" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/outdoors-4.jpg" alt="Smiling model holding a beverage can in a garden" width="928" height="1232" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/outdoors-2.jpg" alt="Model in a white sweater sitting on a mountainside" width="1024" height="1024" loading="lazy" decoding="async"></li>
+        </ul>
+        <ul class="stills-panel" id="stills-faces" role="tabpanel" aria-labelledby="stills-tab-faces">
+          <li><img src="/assets/stills/faces-2.jpg" alt="Close-up of a model with light eyes and freckles" width="1024" height="1024" loading="lazy" decoding="async"></li>
+          <li><img src="/assets/stills/faces-1.jpg?v=3" alt="Black-and-white portrait of a model with her hair tied back, looking over her shoulder" width="1024" height="1024" loading="lazy" decoding="async" style="object-position: 44% 50%"></li>
+          <li><img src="/assets/stills/faces-4.jpg?v=4" alt="Portrait of a male model with wet curly hair against a light background" width="960" height="1200" loading="lazy" decoding="async"></li>
+        </ul>
+        <ul class="stills-panel" id="stills-objects" role="tabpanel" aria-labelledby="stills-tab-objects">
+          <li><img src="/assets/stills/objects-2.jpg" alt="White shirt with a black tie and a leather belt on a block of stone" width="928" height="1232" loading="lazy" decoding="async" style="object-position: 50% 60%"></li>
+          <li><img src="/assets/stills/objects-3.jpg" alt="Wide light-colored trousers, a black leather bag and high heels against a black background" width="928" height="1232" loading="lazy" decoding="async" style="object-position: 50% 60%"></li>
+          <li><img src="/assets/stills/objects-0.jpg" alt="A foot in a fur-trimmed high heel, standing on a rock" width="928" height="1232" loading="lazy" decoding="async" style="object-position: 50% 60%"></li>
+        </ul>
+      </div>
+
+      <div class="stills-tabs" role="tablist" aria-label="Campaigns" aria-orientation="vertical">
+        <button type="button" class="stills-tab is-active" id="stills-tab-dark" role="tab" aria-selected="true" aria-controls="stills-dark" tabindex="0"><span class="stills-tab-num">01</span><span class="stills-tab-name">AFTER DARK</span><span class="stills-tab-cat">FASHION EDITORIAL</span></button>
+        <button type="button" class="stills-tab" id="stills-tab-shades" role="tab" aria-selected="false" aria-controls="stills-shades" tabindex="-1"><span class="stills-tab-num">02</span><span class="stills-tab-name">SHADES</span><span class="stills-tab-cat">EYEWEAR CAMPAIGN</span></button>
+        <button type="button" class="stills-tab" id="stills-tab-skin" role="tab" aria-selected="false" aria-controls="stills-skin" tabindex="-1"><span class="stills-tab-num">03</span><span class="stills-tab-name">SECOND SKIN</span><span class="stills-tab-cat">ACTIVEWEAR CAMPAIGN</span></button>
+        <button type="button" class="stills-tab" id="stills-tab-outdoors" role="tab" aria-selected="false" aria-controls="stills-outdoors" tabindex="-1"><span class="stills-tab-num">04</span><span class="stills-tab-name">OUTDOORS</span><span class="stills-tab-cat">LIFESTYLE CAMPAIGN</span></button>
+        <button type="button" class="stills-tab" id="stills-tab-faces" role="tab" aria-selected="false" aria-controls="stills-faces" tabindex="-1"><span class="stills-tab-num">05</span><span class="stills-tab-name">FACES</span><span class="stills-tab-cat">AI MODELS</span></button>
+        <button type="button" class="stills-tab" id="stills-tab-objects" role="tab" aria-selected="false" aria-controls="stills-objects" tabindex="-1"><span class="stills-tab-num">06</span><span class="stills-tab-name">OBJECTS</span><span class="stills-tab-cat">FASHION PRODUCT</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== DIGITAL — the campaign carried into websites & digital experiences ===================================================== -->
+  <section class="section digital" id="digital">
+    <div class="work-head digital-head">
+      <p class="kicker reveal" dir="ltr">03 / DIGITAL</p>
+      <div class="work-head-text reveal">
+        <h2 class="work-title">Websites and<br>digital experiences.</h2>
+        <p class="work-sub digital-sub">We build websites and digital experiences that carry the brand's language forward — from concept and design to the finished product.</p>
+      </div>
+    </div>
+
+    <!-- live previews: each real site renders at desktop width, scaled into its frame. Frozen until the visitor presses the button in its centre; then it scrolls inside (page scroll locked meanwhile) until they leave it -->
+    <div class="digital-grid">
+      <article class="digital-item reveal">
+        <div class="digital-caption">
+          <p class="digital-label" dir="ltr"><span class="digital-num">01</span>BRAND WEBSITES</p>
+          <p class="digital-desc">Websites that tell the brand's story.</p>
+        </div>
+        <div class="digital-visual is-live-site" dir="ltr">
+          <span class="digital-bar">
+            <i></i><i></i><i></i>
+            <span class="digital-url">ora-hotel.vercel.app</span>
+            <a class="digital-visit" href="https://ora-hotel.vercel.app" target="_blank" rel="noopener" aria-label="Visit the ORA Hotel website">VISIT ↗</a>
+          </span>
+          <span class="digital-screen">
+            <iframe class="digital-frame" data-src="https://ora-hotel.vercel.app" title="ORA Hotel — website preview" loading="lazy" tabindex="-1"></iframe>
+          </span>
+          <a class="digital-open" href="https://ora-hotel.vercel.app" target="_blank" rel="noopener">Open the site ↗</a>
+          <button type="button" class="digital-enter"><span class="digital-enter-icon" aria-hidden="true"></span>Click to scroll the site</button>
+          <button type="button" class="digital-exit" hidden>Exit ✕</button>
+        </div>
+      </article>
+      <article class="digital-item reveal">
+        <div class="digital-caption">
+          <p class="digital-label" dir="ltr"><span class="digital-num">02</span>LANDING PAGES</p>
+          <p class="digital-desc">Landing pages built to drive action.</p>
+        </div>
+        <div class="digital-visual is-live-site" dir="ltr">
+          <span class="digital-bar">
+            <i></i><i></i><i></i>
+            <span class="digital-url">stki-summit-2026.netlify.app</span>
+            <a class="digital-visit" href="https://stki-summit-2026.netlify.app" target="_blank" rel="noopener" aria-label="Visit the STKI Summit 2026 website">VISIT ↗</a>
+          </span>
+          <span class="digital-screen">
+            <iframe class="digital-frame" data-src="https://stki-summit-2026.netlify.app" title="STKI Summit 2026 — website preview" loading="lazy" tabindex="-1"></iframe>
+          </span>
+          <a class="digital-open" href="https://stki-summit-2026.netlify.app" target="_blank" rel="noopener">Open the site ↗</a>
+          <button type="button" class="digital-enter"><span class="digital-enter-icon" aria-hidden="true"></span>Click to scroll the site</button>
+          <button type="button" class="digital-exit" hidden>Exit ✕</button>
+        </div>
+      </article>
+      <article class="digital-item reveal">
+        <div class="digital-caption">
+          <p class="digital-label" dir="ltr"><span class="digital-num">03</span>REAL ESTATE</p>
+          <p class="digital-desc">Real estate websites that sell the dream before it's built.</p>
+        </div>
+        <div class="digital-visual is-live-site" dir="ltr">
+          <span class="digital-bar">
+            <i></i><i></i><i></i>
+            <span class="digital-url">kaya-tlv.vercel.app</span>
+            <a class="digital-visit" href="https://kaya-tlv.vercel.app" target="_blank" rel="noopener" aria-label="Visit the KAYA Tel Aviv website">VISIT ↗</a>
+          </span>
+          <span class="digital-screen">
+            <iframe class="digital-frame" data-src="https://kaya-tlv.vercel.app" title="KAYA Tel Aviv — website preview" loading="lazy" tabindex="-1"></iframe>
+          </span>
+          <a class="digital-open" href="https://kaya-tlv.vercel.app" target="_blank" rel="noopener">Open the site ↗</a>
+          <button type="button" class="digital-enter"><span class="digital-enter-icon" aria-hidden="true"></span>Click to scroll the site</button>
+          <button type="button" class="digital-exit" hidden>Exit ✕</button>
+        </div>
+      </article>
+      <article class="digital-item reveal">
+        <div class="digital-caption">
+          <p class="digital-label" dir="ltr"><span class="digital-num">04</span>DIGITAL EXPERIENCES</p>
+          <p class="digital-desc">Interactive experiences that feel different.</p>
+        </div>
+        <div class="digital-visual is-live-site" dir="ltr">
+          <span class="digital-bar">
+            <i></i><i></i><i></i>
+            <span class="digital-url">dist-gamma-ten-48.vercel.app</span>
+            <a class="digital-visit" href="https://dist-gamma-ten-48.vercel.app" target="_blank" rel="noopener" aria-label="Visit the Samsung Galaxy Z Fold6 website">VISIT ↗</a>
+          </span>
+          <span class="digital-screen">
+            <iframe class="digital-frame" data-src="https://dist-gamma-ten-48.vercel.app" title="Samsung Galaxy Z Fold6 — website preview" loading="lazy" tabindex="-1"></iframe>
+          </span>
+          <a class="digital-open" href="https://dist-gamma-ten-48.vercel.app" target="_blank" rel="noopener">Open the site ↗</a>
+          <button type="button" class="digital-enter"><span class="digital-enter-icon" aria-hidden="true"></span>Click to scroll the site</button>
+          <button type="button" class="digital-exit" hidden>Exit ✕</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================================================== WHAT WE DO — editorial capabilities: intro + five ruled services =====================================================
+       content-led on purpose (the sections above carry the visuals). Scroll only emphasises the row being read. -->
+  <section class="section wwd" id="services">
+    <p class="kicker wwd-label" dir="ltr">04 / WHAT WE DO</p>
+
+    <div class="wwd-intro">
+      <h2 class="wwd-headline reveal">What do we create?</h2>
+      <p class="wwd-lede reveal">AI-produced advertising and creative, social media management and paid advertising, websites and landing pages — all the way to AI integration inside the business. Everything a business needs to look good, reach the right audience and work smarter.</p>
+    </div>
+
+    <ol class="cap-list">
+        <li class="cap-row">
+          <span class="cap-num" dir="ltr">01</span>
+          <h3 class="cap-title">AI Advertising &amp; Creative</h3>
+          <p class="cap-desc">Campaigns, commercials and visuals produced with AI — from the idea and concept to assets that are ready to go live.</p>
+        </li>
+        <li class="cap-row">
+          <span class="cap-num" dir="ltr">02</span>
+          <h3 class="cap-title">Social Media Management</h3>
+          <p class="cap-desc">Ongoing management of the business's social media channels — strategy, content, design and consistent publishing that keep the brand present.</p>
+        </li>
+        <li class="cap-row">
+          <span class="cap-num" dir="ltr">03</span>
+          <h3 class="cap-title">Paid Advertising</h3>
+          <p class="cap-desc">Paid campaigns on social media and Google — setup, creative, management and ongoing optimization, so the budget delivers results.</p>
+        </li>
+        <li class="cap-row">
+          <span class="cap-num" dir="ltr">04</span>
+          <h3 class="cap-title">Websites &amp; Landing Pages</h3>
+          <p class="cap-desc">Brand websites and landing pages with custom design — fast and fully optimized for mobile.</p>
+        </li>
+        <li class="cap-row">
+          <span class="cap-num" dir="ltr">05</span>
+          <h3 class="cap-title">AI Integration for Businesses</h3>
+          <p class="cap-desc">Implementing AI tools and automations in businesses and companies — smart workflows that save time and resources.</p>
+        </li>
+    </ol>
+  </section>
+
+
+  <!-- ===================================================== CONTACT — the last frame: one viewport, type-led, ruled form, closing credits ===================================================== -->
+  <section class="closing" id="contact">
+    <div class="closing-frame">
+
+      <div class="closing-top" dir="ltr">
+        <p class="kicker closing-label reveal">05 / CONTACT</p>
+      </div>
+
+      <div class="closing-main">
+        <h2 class="closing-title reveal" style="--d:.12s" dir="ltr">
+          <span>LET'S</span>
+          <span class="outline">TALK.</span>
+        </h2>
+
+        <div class="closing-side">
+          <p class="closing-lede reveal" style="--d:.25s">Tell us a bit about your project.</p>
+
+          <form class="closing-form" id="contactForm" novalidate>
+            <input class="cf-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="cf-grid">
+          <label class="cf-field reveal" style="--d:0.35s">
+            <span class="cf-label">Name</span>
+            <input name="name" type="text" autocomplete="name" required>
+            <span class="cf-index" dir="ltr" aria-hidden="true">01</span>
+          </label>
+          <label class="cf-field reveal" style="--d:0.42s">
+            <span class="cf-label">Company <span class="cf-optional">(optional)</span></span>
+            <input name="company" type="text" autocomplete="organization">
+            <span class="cf-index" dir="ltr" aria-hidden="true">02</span>
+          </label>
+          <label class="cf-field reveal" style="--d:0.49s">
+            <span class="cf-label">Email <span class="cf-optional">(optional)</span></span>
+            <input name="email" type="email" autocomplete="email" dir="ltr">
+            <span class="cf-index" dir="ltr" aria-hidden="true">03</span>
+          </label>
+          <label class="cf-field reveal" style="--d:0.56s">
+            <span class="cf-label">Phone</span>
+            <input name="phone" type="tel" autocomplete="tel" dir="ltr">
+            <span class="cf-index" dir="ltr" aria-hidden="true">04</span>
+          </label>
+            </div>
+            <label class="cf-field cf-wide reveal" style="--d:.63s">
+              <span class="cf-label">What would you like to create?</span>
+              <textarea name="message" rows="1"></textarea>
+              <span class="cf-index" dir="ltr" aria-hidden="true">05</span>
+            </label>
+            <div class="cf-submit reveal" style="--d:.72s">
+              <button type="submit" class="btn-submit">Send message <span class="arrow">→</span></button>
+              <p class="cf-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="site-footer reveal" style="--d:.85s">
+        <div class="footer-credits" dir="ltr">
+          <div class="footer-id">
+            <img class="footer-logo" src="/assets/logo-dark.webp" alt="Vision AI Studio" width="1753" height="174">
+          </div>
+          <nav class="footer-links" aria-label="Contact links">
+            <a href="https://www.instagram.com/visionaicreative" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.tiktok.com/@studioaivision" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://wa.me/972525529235?text=Hi%2C%20I%20found%20you%20through%20the%20Vision%20AI%20Studio%20website%20and%20would%20love%20to%20hear%20more" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="mailto:visionaiacreative@gmail.com">Email</a>
+            <a href="/en/accessibility">Accessibility Statement</a>
+          </nav>
+        </div>
+      </footer>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- floating WhatsApp — set the number (international, digits only, e.g. 972501234567) in data-phone -->
+<a class="wa-float" href="https://wa.me/972525529235" data-phone="972525529235" data-text="Hi, I found you through the Vision AI Studio website and would love to hear more" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <span class="wa-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </span>
+  <span class="wa-label">Chat with us on WhatsApp</span>
+</a>
+
+<!-- accessibility menu -->
+<button type="button" class="a11y-toggle" aria-expanded="false" aria-controls="a11yPanel" aria-label="Accessibility menu">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="4" r="2" fill="currentColor"/><path d="M4 8.2l5.2 1.1v3.4L7.3 21h2.2l2-6.4h1l2 6.4h2.2l-1.9-8.3V9.3L20 8.2l-.4-1.9-5.4 1.1h-4.4L4.4 6.3z" fill="currentColor"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility menu" hidden>
+  <div class="a11y-head">
+    <p class="a11y-title">Accessibility</p>
+    <button type="button" class="a11y-close" aria-label="Close the accessibility menu">✕</button>
+  </div>
+  <div class="a11y-row a11y-size">
+    <span>Text size</span>
+    <span class="a11y-steps">
+      <button type="button" data-a11y="text-down" aria-label="Decrease text size">−</button>
+      <span class="a11y-text-level" aria-live="polite">100%</span>
+      <button type="button" data-a11y="text-up" aria-label="Increase text size">+</button>
+    </span>
+  </div>
+  <button type="button" class="a11y-row" data-a11y="contrast" aria-pressed="false">High contrast</button>
+  <button type="button" class="a11y-row" data-a11y="links" aria-pressed="false">Highlight links</button>
+  <button type="button" class="a11y-row" data-a11y="font" aria-pressed="false">Readable font</button>
+  <button type="button" class="a11y-row" data-a11y="still" aria-pressed="false">Stop animations and video</button>
+  <button type="button" class="a11y-row a11y-reset" data-a11y="reset">Reset settings</button>
+  <a class="a11y-row a11y-link" href="/en/accessibility">Accessibility Statement</a>
+</div>
+
+<script src="/js/main.js?v=34"></script>
+</body>
+</html>

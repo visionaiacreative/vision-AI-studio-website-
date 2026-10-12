@@ -1602,3 +1602,89 @@ html.a11y-still .strip{ overflow-x: auto; }
 @media (max-width: 560px){ .cp-foot{ padding-bottom: 96px; } } /* clear of the floating buttons */
 @media (max-width: 560px){ .cp-hero-inner{ padding-bottom: 84px; } } /* CTA sits above the floating buttons */
 html.a11y-contrast .cp-shade{ background: rgba(10,9,7,.72); }
+
+/* ==========================================================================
+   Language switch (header) + the English pages under /en
+   The Hebrew layout pins English labels left and Hebrew copy right. On the English
+   pages (<html lang="en" dir="ltr">) the copy reads left to right, so each of those
+   pairs is mirrored: copy on the left, the small label on the right.
+   ========================================================================== */
+
+.lang-switch{
+  margin-left: auto; /* header is dir=ltr: sits at the right, just before the CTA */
+  padding: 6px 2px 3px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  line-height: 1;
+  color: var(--ink-70);
+  border-bottom: 1px solid var(--line-strong);
+  transition: color .25s var(--ease), border-color .25s var(--ease);
+}
+.lang-switch[lang="he"]{ font-size: 13.5px; letter-spacing: 0; }
+.lang-switch:hover{ color: var(--ink); border-color: var(--ink); }
+.lang-switch + .btn-talk{ margin-left: -16px; } /* the switch takes the auto margin; keep the two close */
+.site-header.on-hero:not(.is-scrolled):not(.menu-open) .lang-switch{ color: rgba(244,239,230,.85); border-color: rgba(244,239,230,.45); }
+.site-header.on-hero:not(.is-scrolled):not(.menu-open) .lang-switch:hover{ color: var(--paper); border-color: var(--paper); }
+@media (max-width: 980px){
+  .lang-switch ~ .menu-toggle{ margin-inline-start: -18px; } /* switch + menu button share the right edge */
+}
+
+/* arrows point right and nudge right */
+html[lang="en"] .btn-primary:hover .arrow,
+html[lang="en"] .btn-ghost:hover .arrow,
+html[lang="en"] .btn-soft:hover .arrow,
+html[lang="en"] .btn-submit:hover .arrow{ transform: translateX(4px); }
+html[lang="en"] .btn-talk:hover .arrow{ transform: translateX(3px); }
+
+/* hero: copy + CTAs left, services line right */
+html[lang="en"] .hero-text{ order: 1; direction: ltr; text-align: left; }
+html[lang="en"] .hero-services{ order: 2; }
+html[lang="en"] .hero-lede{ white-space: normal; max-width: 40ch; }
+
+/* section heads: headline left, label right */
+html[lang="en"] .work-head-text{ direction: ltr; text-align: left; }
+html[lang="en"] .work-sub-line, html[lang="en"] .digital-sub{ white-space: normal; max-width: 58ch; }
+html[lang="en"] .work-hint{ text-align: left; }
+@media (min-width: 721px){
+  html[lang="en"] .work-head{ flex-direction: row-reverse; }
+}
+html[lang="en"] .digital-desc{ direction: ltr; }
+
+/* what we do */
+html[lang="en"] .wwd-intro{ direction: ltr; }
+html[lang="en"] .wwd-headline, html[lang="en"] .wwd-lede,
+html[lang="en"] .cap-num, html[lang="en"] .cap-title, html[lang="en"] .cap-desc{ text-align: left; }
+html[lang="en"] .cap-title, html[lang="en"] .cap-desc{ transform-origin: left center; }
+
+/* contact */
+html[lang="en"] .closing-lede{ direction: ltr; text-align: left; }
+html[lang="en"] .closing-form{ direction: ltr; }
+html[lang="en"] .cf-field::after{ transform-origin: left; }
+html[lang="en"] .cf-status{ text-align: left; }
+
+/* floating buttons */
+html[lang="en"] .a11y-row{ text-align: left; }
+html[lang="en"] .wa-float{ flex-direction: row; } /* icon stays at the outer (left) end */
+
+/* courses screen */
+html[lang="en"] .cp-lede{ direction: ltr; text-align: left; }
+@media (min-width: 861px){
+  html[lang="en"] .cp-band{ flex-direction: row-reverse; }
+}
+html[lang="en"] .gets, html[lang="en"] .tk-grid{ direction: ltr; }
+html[lang="en"] .tk-gets li{ padding: 11px 0 11px 18px; }
+html[lang="en"] .tk-gets li::before{ right: auto; left: 0; }
+html[lang="en"] .tk-facts > div{ grid-template-columns: 78px minmax(0, 1fr); }
+html[lang="en"] .price{ direction: ltr; text-align: left; }
+html[lang="en"] .price-note{ direction: ltr; }
+html[lang="en"] .strip-head{ flex-direction: row-reverse; }
+html[lang="en"] .strip-head p:last-child{ direction: ltr; }
+
+/* narrow screens: the longer English labels need room */
+@media (max-width: 980px){
+  html[lang="en"] .digital-desc{ margin-left: 0; } /* wraps under its label: stay flush left */
+}
+@media (max-width: 560px){
+  html[lang="en"] .footer-links{ flex-wrap: wrap; gap: 12px 24px; }
+}
