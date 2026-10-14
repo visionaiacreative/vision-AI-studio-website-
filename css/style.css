@@ -1548,7 +1548,7 @@ html.a11y-still .wa-float{ opacity: 1; transform: none; }
 .tk-grid{
   direction: rtl;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
 }
